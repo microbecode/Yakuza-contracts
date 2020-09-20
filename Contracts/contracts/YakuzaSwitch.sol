@@ -82,7 +82,7 @@ contract YakuzaSwitch {
         mintable = mintable > _totalMintable ? _totalMintable : mintable;
     }
 
-    function vasaPowerSwitch(uint256 senderBalanceOf) public {
+    function yakuzaSwitch(uint256 senderBalanceOf) public {
         require(block.number >= _startBlock, "Switch still not started!");
 
         IERC20 oldToken = IERC20(_oldTokenAddress);
