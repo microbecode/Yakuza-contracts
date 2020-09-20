@@ -1,6 +1,6 @@
 pragma solidity ^0.6.12;
 
-contract VasaPowerSwitch {
+contract YakuzaSwitch {
 
     uint256 private _totalMintable;
     uint256[] private _timeWindows;

@@ -1,23 +1,12 @@
-var VasaPowerSwitch = artifacts.require("VasaPowerSwitch");
-var Arg = "Hello world";
+var switchArtifact = artifacts.require("YakuzaSwitch");
 module.exports = deployer => {
-    deployer.deploy(VasaPowerSwitch, 
-        0x53453571d73F15a1E6E5A45CB26bdB202e0da840, 
-        0x9c783457cE2bD4002875230E97E5FB496c12196F,
-        1,
-        0,
-        [1]
-        [1]
-        [1]
+    deployer.deploy(switchArtifact, 
+        "0x59095e53c903c80e37fa25b57fd812c6d58f13d3",  // doubleProxyAddress of the old contract
+        "0x9c783457cE2bD4002875230E97E5FB496c12196F", // oldTokenAddress
+        1, // startBlock
+        10000, // totalMintable
+        [10000000], // time windows (block numbers) until which block multiplier and divider is used
+        [1], // multipliers
+        [1] // dividers
         );
-
-    /*
-address doubleProxyAddress, address oldTokenAddress, uint256 startBlock, 
-uint256 totalMintable, 
-uint256[] memory timeWindows, 
-uint256[] memory multipliers, 
-uint256[] memory dividers
-
-return (_timeWindows[i], _multipliers[i][0], _multipliers[i][1]);
-    */
 };

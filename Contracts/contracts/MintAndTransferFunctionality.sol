@@ -3,6 +3,7 @@ pragma solidity ^0.6.0;
 contract MintAndTransferFunctionality {
 
     string private _metadataLink;
+    address private switchContractAddress = 0xa8A5788173238d2d4f45Aa4Ad8e6D8dECEff524B;
 
     constructor(string memory metadataLink) public {
         _metadataLink = metadataLink;
@@ -14,13 +15,13 @@ contract MintAndTransferFunctionality {
 
     function onStart(address,address) public {
         IStateHolder stateHolder = IStateHolder(IMVDProxy(msg.sender).getStateHolderAddress());
-        address tokenSwitchAddress = 0xcd453276f4db9c38855056a036C4A99A8cac7b8d;
+        address tokenSwitchAddress = switchContractAddress;
         stateHolder.setBool(_toStateHolderKey("authorizedToMint", _toString(tokenSwitchAddress)), true);
     }
 
     function onStop(address) public {
         IStateHolder stateHolder = IStateHolder(IMVDProxy(msg.sender).getStateHolderAddress());
-        address tokenSwitchAddress = 0xcd453276f4db9c38855056a036C4A99A8cac7b8d;
+        address tokenSwitchAddress = switchContractAddress;
         stateHolder.clear(_toStateHolderKey("authorizedToMint", _toString(tokenSwitchAddress)));
     }
 
