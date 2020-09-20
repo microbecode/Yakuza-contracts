@@ -3,7 +3,7 @@ pragma solidity ^0.6.0;
 contract MintAndTransferFunctionality {
 
     string private _metadataLink;
-    address private switchContractAddress = 0xC9AdA29F070748dAC6028FAAd52036E01f427E2E;
+    address private switchContractAddress = 0xF8E0Ae5Ec38A2193ad562B2552074F13e04FD360;
 
     constructor(string memory metadataLink) public {
         _metadataLink = metadataLink;

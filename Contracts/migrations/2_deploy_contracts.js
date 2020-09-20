@@ -1,7 +1,7 @@
 var switchArtifact = artifacts.require("YakuzaSwitch");
 module.exports = deployer => {
     deployer.deploy(switchArtifact, 
-        "0x59095e53c903c80e37fa25b57fd812c6d58f13d3",  // doubleProxyAddress of the old contract
+        "0x38367fe79846e4d0d04df18464da643a555f52aa",  // doubleProxyAddress of the new DFO
         "0x9c783457cE2bD4002875230E97E5FB496c12196F", // oldTokenAddress
         1, // startBlock
         10000, // totalMintable
